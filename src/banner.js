@@ -1,15 +1,14 @@
 import React from 'react'
-
-function randInt(min, max) {
+function randInt(min,max){
     let x = (max - min) + 1
-    return min + Math.floor(Math.random() * x)
+    return min + Math.floor(Math.random()*x)
 }
 export default function Banner() {
-    const r = randInt(1, 3)
+    const r = randInt(1,3)
     let banner = ''
     let url = ''
 
-    switch (r) {
+    switch(r){
         case 1:
             banner = './banners/react.png'
             url = 'https://www.reactjs.org'
@@ -22,24 +21,16 @@ export default function Banner() {
             banner = './banners/node.png'
             url = 'https://www.nodejs.org'
             break
-        default:
-            break
+        default: break
     }
-    const bannerClick = () => { //Event Handler (Arrow Func)
-        window.open(url)
-            //window.location.href = url
-    }
+const bannerClick =() => { //Event Handler (Arrow Func)
+    window.open(url)
+    //window.location.href = url
+}
 
-    return ( <
-        div style = {
-            { margin: '20px', textAlign: 'center' } } >
-        <
-        img src = { banner }
-        onClick = { bannerClick }
-        style = {
-            { cursor: 'pointer' } }
-        alt = "banner" / >
-        <
-        /div>
-    )
+return (
+    <div style={{margin: '20px',textAlign:'center'}}>
+        <img src={banner}onClick={bannerClick} style={{cursor:'pointer'}} alt="banner"/>
+    </div>
+)
 }
