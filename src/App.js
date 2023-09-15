@@ -1,24 +1,24 @@
-import { createContext, useState } from "react";
-import Menu from "./component/Menu";
-import Quiz from "./component/Quiz";
-import Score from "./component/Score";
-import './App.css'
+import React from "react";
+import { userContext } from './context';
+//import Content from "./context-content";
+import Header2 from "./context-header2";
+import Content2 from "./context-content2";
+// import RefsFunc from './refs-func'
+// import RefsArray from './refs-array'
+// import MessageBox from './state-func'
 
-export const DataContext = createContext();
+// import Banner from './banner'
+// import { Header,Content,Footer } from "./func-components";
+// import Calendar from "./class-components";
+// import { Calculator2 } from "./calculator";
+// import { EventData2 } from "./event-data";
 
-function App() {
-  const [appState, setAppState] = useState("menu");
-  const [score,setScore] = useState(0)
+export default function App() {
+  let [user, setUser] = React.useState('')
   return (
-    <DataContext.Provider value={{ appState, setAppState, score, setScore }}>
-      <div className="App">
-        <h1>Web Development Quiz</h1>
-        {appState === "menu" && <Menu />}
-        {appState === "quiz" && <Quiz />}
-        {appState === "score" && <Score />}
-      </div>
-    </DataContext.Provider>
-  );
+    <userContext.Provider value={[user, setUser]}>
+    <Header2/>
+    <Content2/>
+    </userContext.Provider>
+  )
 }
-
-export default App;
