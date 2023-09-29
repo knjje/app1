@@ -6,13 +6,13 @@ export default function FormText() {
 
     const onBlurPassword=()=>{
         let pswd = textPswd.current.value
-        if( pswd !== '' &&!pswd.match(/^[0-9a-zA-Z]+$/)) {
+        if( textPswd !== '' &&!pswd.match(/^[0-9a-zA-Z]+$/)) {
             textPswd.current.value=''
         alert('ต้องเป็น 0-9 หรือ a-z หรือ A-Z เท่านั้น')
     }
         }
-    const onBluePassword2 = () => {
-        if(textPswd !== '' &&!pswd.match(/^[0-9a-zA-Z]+$/)) {
+    const onBlurPassword2 = () => {
+        if(textPswd.current.value !== textPswd2.curret.value) {
             textPswd2.current.value =''
             alert('รหัสผ่านทั้งสองช่องไม่ตรงกัน')
         }
@@ -32,21 +32,21 @@ export default function FormText() {
             className="form-control from-control-sm"
                 ref={textPswd} onBlur={onBlurPassword}/>
         </div>
-        <div className="">
-            <label htmlFor="pswd2"></label>
-            <input type="" id="pswd2"
+        <div className="form-group mb-2">
+            <label htmlFor="pswd2">ใส่รหัสผ่านซ้ำ</label>
+            <input type="password" id="pswd2"
               className="form-control from-control-sm"
               ref={textPswd2} onBlur={onBlurPassword2}/>
               </div>
         <div className="form-group mb-4">
-            <label htmlFor="memo"></label>
+            <label htmlFor="memo">บันทึกช่วยจำ</label>
             <textarea id="memo" name="memo" rows="2"
             maxLength="200"
             className="form-control from-control-sm">
             </textarea>
         </div>
         <div className="text-center">
-            <button className="btn btn-sm ps-4 primary">
+            <button className="btn btn-sm px-4 bg-primary text-white">
                 OK
             </button>
         </div>
