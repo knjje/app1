@@ -10,25 +10,13 @@ export function Calculator2() {
         alert(`${c} = ${r}`)
     }
 
-    return ( <
-        div style = {
-            { textAlign: 'center', marginTop: 20 }
-        } >
-        <
-        span > { n1 } < /span>&nbsp; <
-        button onClick = {
-            () => calculate('+')
-        } > + < /button>&nbsp; <
-        button onClick = {
-            () => calculate('-')
-        } > - < /button>&nbsp; <
-        button onClick = {
-            () => calculate('*')
-        } > * < /button>&nbsp; <
-        button onClick = {
-            () => calculate('/')
-        } > /</button > & nbsp; <
-        span > { n2 } < /span> < /
-        div >
+    return ( 
+    <div style = {{ textAlign: 'center', marginTop: 20 }}>
+        <span > {n1} </span>&nbsp; <button onClick = {() => calculate('+')} > + </button>&nbsp; 
+        <button onClick = {() => calculate('-')}> - </button>&nbsp; 
+        <button onClick = {() => calculate('*')}> * </button>&nbsp; 
+        <button onClick = {() => calculate('/')}> / </button > & nbsp; 
+        <span > { n2 } </span> 
+        </div>
     )
 }
